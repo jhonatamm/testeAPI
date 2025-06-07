@@ -1,2 +1,8 @@
 .vs
 /.vs
+ApiTeste/obj/
+ApiTeste/bin/
+/ApiTeste/obj/
+/ApiTeste/bin/
+./ApiTeste/obj/
+./ApiTeste/bin/
