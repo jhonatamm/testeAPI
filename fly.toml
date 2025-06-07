@@ -1,0 +1,6 @@
+app = "ApiTeste"
+
+primary_region = "gru"
+
+[build]
+  image = "Dockerfile" 
