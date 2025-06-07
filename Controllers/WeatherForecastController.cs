@@ -1,21 +1,19 @@
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace ApiTeste.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
-    public class TesteController : ControllerBase
+    [Route("[controller]")]
+    public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        private readonly ILogger<TesteController> _logger;
+        private readonly ILogger<WeatherForecastController> _logger;
 
-        public TesteController(ILogger<TesteController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
         }
@@ -30,13 +28,6 @@ namespace ApiTeste.Controllers
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
-        }
-
-        [HttpGet("ping")]
-        public async Task<ActionResult> getPong()
-        {
-            _logger.LogInformation(" Realizando pingpong com o frontend ");
-            return Ok("pong");
         }
     }
 }
